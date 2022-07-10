@@ -27,7 +27,7 @@ public class Part11BlockingToReactive {
 
 	// TODO Create a Flux for reading all users from the blocking repository deferred until the flux is subscribed, and run it with an elastic scheduler
 	Flux<User> blockingRepositoryToFlux(BlockingRepository<User> repository) {
-		return null;
+		return Flux.fromIterable(repository.findAll());
 	}
 
 //========================================================================================
